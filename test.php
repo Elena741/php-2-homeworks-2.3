@@ -106,10 +106,20 @@ if (empty($_POST['add'])) {
 }
 $arrResult = array_sum($arrResult);
 $arrResultRight = array_sum($arrResultRight);
+function clean($value)
+{
+    $value = trim($value);
+    $value = stripslashes($value);
+    $value = strip_tags($value);
+    $value = htmlspecialchars($value);
+    
+    return $value;
+}
+$name=clean($_POST['name']);
 if ($arrResult === $arrResultRight) {
 ?>
     <div class='sert'>
-      <h2><?=$_POST['name']?></h2>
+      <h2><?=$name?></h2>
                         
       <p>Вы правильно ответили на все вопросы этого теста.<br><br>ПОЗДРАВЛЯЕМ !!!</p>
     </div>

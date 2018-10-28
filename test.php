@@ -51,13 +51,27 @@ foreach ($fileList as $key => $file) {
        label {
         margin-right: 10px; 
        }
-      .sert {
+      .img {
         width: 400px;
-        height: 150px;
-        background-image: url("https://previews.123rf.com/images/allegretto/allegretto1308/allegretto130800005/21699291-Blank-Template-for-School-or-Gift-Certificate-Stock-Photo.jpg");
-        background-size: 440px 190px;
-           padding: 20px;
+        position : relative;
+       }
+       .img h2 { 
+        display: block;
+        position: absolute; 
         text-align: center;
+        top: 20%; 
+        left: 0;
+        right: 0;
+        margin: auto;
+       }
+       .img p { 
+        position: absolute;
+        text-align: center;
+        left: 0;
+        right: 0;
+        margin: auto;
+        line-height: 1.5;
+        top: 40%; 
        }
     </style>
     <title>Тесты</title>
@@ -118,10 +132,11 @@ function clean($value)
 $name=clean($_POST['name']);
 if ($arrResult === $arrResultRight) {
 ?>
-    <div class='sert'>
+    <div class="img">
+      <img src="sert2.php">
       <h2><?=$name?></h2>
                         
-      <p>Вы правильно ответили на все вопросы этого теста.<br><br>ПОЗДРАВЛЯЕМ !!!</p>
+      <p>Вы правильно ответили на все вопросы этого теста. ПОЗДРАВЛЯЕМ !!!</p>
     </div>
     <p><a href='list.php'>Xочу пройти другой тест</a></p>
 

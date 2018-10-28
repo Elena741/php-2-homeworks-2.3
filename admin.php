@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['add']) && empty($_FILES['testfile']['name'])) {
     header("Location:admin.php");
+    exit;
 }
 elseif (isset($_POST) && isset($_FILES) && isset($_FILES['testfile'])) {
     $fileName = $_FILES['testfile']['name'];
@@ -12,8 +13,10 @@ elseif (isset($_POST) && isset($_FILES) && isset($_FILES['testfile'])) {
     if ($pathInfo['extension'] === 'json') {
         move_uploaded_file($tmpFile, $uploadsDir . $fileName);
         header("Location:list.php");
+        exit;
     } else {
         header("Location:admin.php");
+        exit;
     }        
 } 
 ?>
